@@ -13,7 +13,7 @@ if ! hash gsettings 2>/dev/null; then
     exit 1
 fi
 if [ ! -d "$WALLPAPER_FOLDER" ]; then
-    1&>2 echo "Wallpaper folder '$WALLPAPER_FOLDER' does not exist."
+    1>&2 echo "Wallpaper folder '$WALLPAPER_FOLDER' does not exist."
     exit 1
 fi
 
