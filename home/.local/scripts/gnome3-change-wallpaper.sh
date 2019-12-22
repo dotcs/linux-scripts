@@ -21,6 +21,6 @@ fi
 PID=$(pgrep gnome-session | tail -n1)
 export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
 
-FILE_PATH=`ls $WALLPAPER_FOLDER | shuf -n 1`
-FILE_URI="file://$WALLPAPER_FOLDER/$FILE_PATH"
+FILE_PATH=`ls $WALLPAPER_FOLDER/*/*.jpg | shuf -n 1`
+FILE_URI="file://$FILE_PATH"
 /usr/bin/gsettings set org.gnome.desktop.background picture-uri $FILE_URI
